@@ -1,0 +1,67 @@
+*,
+*::before,
+::after {
+  box-sizing: border-box;
+}
+
+.img-slider-btn {
+  all: unset;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background-color 100ms ease-in-out;
+}
+
+.img-slider-btn:hover {
+  background-color: rgb(0, 0, 0, 0.2);
+}
+
+.img-slider-btn:hover > * {
+  animation: squish 200ms ease-in-out;
+}
+
+.img-slider-btn > * {
+  stroke: white;
+  fill: black;
+  width: 2rem;
+  height: 2rem;
+}
+
+@keyframes squish {
+  50% {
+    scale: 1.4 0.6;
+  }
+}
+
+.img-slider-dot-btn {
+  all: unset;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  transition: scale 100ms ease-in-out;
+}
+
+.img-slider-dot-btn:hover {
+  scale: 1.2;
+}
+
+.img-slider-dot-btn > * {
+  stroke: white;
+  fill: black;
+  height: 100%;
+  width: 100%;
+}
+
+@media only screen and (max-width: 550px) {
+  .img-slider-dot-btn {
+    width: 0.6rem;
+    height: 0.6rem;
+  }
+  .img-slider-btn {
+    display: none;
+  }
+}

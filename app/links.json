@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Home",
+    "href": "/"
+  },
+  {
+    "name": "Clan Table",
+    "href": "/clan-table"
+  },
+  {
+    "name": "War Stats",
+    "href": "/war-stats"
+  }
+]
