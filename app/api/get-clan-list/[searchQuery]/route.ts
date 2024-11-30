@@ -13,8 +13,10 @@ async function getClanList(searchQuery: string) {
   // get key
   const CLASH_API_KEY = process.env.CLASH_API_KEY;
 
+  const searchQueryEncoded = encodeURI(searchQuery);
+
   // get url
-  const url = `https://api.clashroyale.com/v1/clans?name=${searchQuery}&limit=30`;
+  const url = `https://api.clashroyale.com/v1/clans?name=${searchQueryEncoded}&limit=30`;
 
   console.log(url);
 
@@ -42,6 +44,8 @@ async function getClanList(searchQuery: string) {
 
     clansList.push(clanData);
   }
+
+  console.log(clanSearchResponse.data);
 
   return clansList;
 }

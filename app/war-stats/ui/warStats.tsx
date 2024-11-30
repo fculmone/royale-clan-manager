@@ -7,6 +7,7 @@ import { ClanTagSearch } from "@/app/ui/clanTagSearch";
 import { StatsSkeleton } from "./skeletons";
 import { HowToInputClan } from "@/app/ui/howToInputClan";
 import KofiButton from "kofi-button";
+import { ClanNameSearch } from "@/app/ui/clanNameSearch";
 
 export default function WarStats({ getData }: { getData: any }) {
   const searchParams = useSearchParams();
@@ -178,6 +179,11 @@ export default function WarStats({ getData }: { getData: any }) {
     return (
       <div className="flex flex-col">
         <div className="flex flex-col w-screen text-center justify-center items-center">
+          <div className="flex justify-center mr-12 mb-3">
+            <div className="">
+              <ClanNameSearch defaultValue={""} />
+            </div>
+          </div>
           <ClanTagSearch
             handleSearch={handleSearch}
             isLoading={isLoading}
@@ -203,6 +209,11 @@ export default function WarStats({ getData }: { getData: any }) {
     return (
       <div className="flex flex-col">
         <div className="flex flex-col w-screen text-center justify-center items-center">
+          <div className="flex justify-center mr-12 mb-3">
+            <div className="">
+              <ClanNameSearch defaultValue={""} />
+            </div>
+          </div>
           <ClanTagSearch
             handleSearch={handleSearch}
             isLoading={isLoading}
@@ -229,6 +240,11 @@ export default function WarStats({ getData }: { getData: any }) {
     return (
       <div>
         <div className="text-center">
+          <div className="flex justify-center mr-12 mb-3">
+            <div className="">
+              <ClanNameSearch defaultValue={""} />
+            </div>
+          </div>
           <ClanTagSearch
             handleSearch={handleSearch}
             isLoading={isLoading}
@@ -245,12 +261,19 @@ export default function WarStats({ getData }: { getData: any }) {
       <div>
         <div className="grid items-center justify-center">
           <div className="flex w-full text-center h-full ">
-            <ClanTagSearch
-              handleSearch={handleSearch}
-              isLoading={isLoading}
-              setIsLoading={setIsLoading}
-              prevValue={prevTag}
-            />
+            <div className="flex justify-center flex-col w-full">
+              <div className="flex justify-center mr-12 mb-3">
+                <div className="">
+                  <ClanNameSearch defaultValue={""} />
+                </div>
+              </div>
+              <ClanTagSearch
+                handleSearch={handleSearch}
+                isLoading={isLoading}
+                setIsLoading={setIsLoading}
+                prevValue={prevTag}
+              />
+            </div>
           </div>
           <div className="flex flex-col h-screen w-screen max-h-[800px] max-w-[800px] px-1 sm:px-4 md:px-8 items-center justify-top mt-14">
             <p className=" mb-4 font-bold text-2xl text-center">

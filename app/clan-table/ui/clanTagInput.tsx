@@ -4,7 +4,7 @@ import { getDataFromServer } from "../../lib/data";
 import BasicTable from "./table";
 import TableWithClanInput from "./tableWithClanInput";
 
-export default function ClanTagInput() {
+export default function ClanTagInput({ defaultValue: string }) {
   //const [searchInput, setSearchInput] = useState("");
 
   function writeStuff() {

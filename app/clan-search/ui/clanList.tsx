@@ -3,6 +3,10 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import testData from "../testData";
+import { ClanNameSearch } from "@/app/ui/clanNameSearch";
+import { ClanTagSearch } from "@/app/ui/clanTagSearch";
+import { MagnifyingGlass } from "react-loader-spinner";
+import Image from "next/image";
 
 export default function ClanList({ getData }: { getData: any }) {
   const searchParams = useSearchParams();
@@ -10,23 +14,34 @@ export default function ClanList({ getData }: { getData: any }) {
   const { replace } = useRouter();
   const [data, setData] = useState<any[]>([]);
   const [isError, setIsError] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     (async () => {
       try {
         if (searchParams.get("clan-name")?.toString()) {
-          if (searchParams.get("clan-name")?.toString() === "") {
+          if (
+            searchParams.get("clan-name")?.toString() === "" ||
+            searchParams.get("clan-name")?.toString().length === 1 ||
+            searchParams.get("clan-name")?.toString().length === 2
+          ) {
             //console.log("clan-tag is empty");
             setData([]);
           } else {
             //await new Promise((resolve) => setTimeout(resolve, 3000));
+            console.log(searchParams.get("clan-name")?.toString());
+            console.log(
+              "api/get-clan-list/" + // @ts-ignore
+                encodeURI(searchParams.get("clan-name")?.toString())
+            );
 
             const result = await fetch(
-              "api/get-clan-list/" + searchParams.get("clan-name")?.toString()
+              "api/get-clan-list/" +
+                // @ts-ignore
+                encodeURI(searchParams.get("clan-name")?.toString())
             );
 
             let initialData = await result.json();
-            console.log(initialData);
 
             if (initialData === undefined) {
               //console.log("initialData undefined, reloading page");
@@ -34,10 +49,10 @@ export default function ClanList({ getData }: { getData: any }) {
               //console.log("initialData undefined, just reloaded the page");
             } else {
               setData(initialData);
-              console.log(initialData);
             }
           }
         }
+        setIsLoading(false);
       } catch (err: any) {
         setIsError(true);
         console.error(err);
@@ -75,18 +90,96 @@ export default function ClanList({ getData }: { getData: any }) {
     );
   }
 
-  return (
-    <div className="w-max">
-      {data.map((clan, index) => {
-        return (
-          <ClanItem
-            key={index}
-            clanName={clan.clanName}
-            clanTag={clan.clanTag}
-            clanBadgeURL={clan.clanBadgeURL}
-          />
-        );
-      })}
-    </div>
-  );
+  if (isError) {
+    return (
+      <div className="mx-2">
+        <p>An unexpected error has occured, please try again shortly</p>
+      </div>
+    );
+  } else if (isLoading) {
+    return (
+      <div>
+        <MagnifyingGlass
+          visible={true}
+          height="80"
+          width="80"
+          ariaLabel="magnifying-glass-loading"
+          wrapperStyle={{}}
+          wrapperClass="magnifying-glass-wrapper"
+          glassColor="#c0efff"
+          color="#e15b64"
+        />
+      </div>
+    );
+  } else if (
+    data.length === 0 &&
+    searchParams.get("clan-name")?.toString() &&
+    searchParams.get("clan-name")?.toString() != ""
+  ) {
+    return (
+      <div className="w-screen flex justify-center flex-col">
+        <div className="flex justify-center mr-12">
+          <div className="mb-6">
+            <ClanNameSearch
+              defaultValue={searchParams.get("clan-name")?.toString()}
+            />
+          </div>
+        </div>
+        <p className="text-center text-lg">No clans found</p>
+        <div className="flex justify-center">
+          <div>
+            <Image
+              className="flex"
+              src="/crying-skeleton.png"
+              width={300}
+              height={300}
+              alt="Crying skeleton emote"
+            />
+          </div>
+        </div>
+      </div>
+    );
+  } else if (
+    !searchParams.get("clan-name")?.toString() ||
+    searchParams.get("clan-name")?.toString() === ""
+  ) {
+    return (
+      <div className="w-screen flex justify-center flex-col">
+        <div className="flex justify-center mr-12">
+          <div className="mb-6">
+            <ClanNameSearch
+              defaultValue={searchParams.get("clan-name")?.toString()}
+            />
+          </div>
+        </div>
+        <p className="text-center text-lg">Please enter a clan name</p>
+      </div>
+    );
+  } else {
+    return (
+      <>
+        <div className="w-screen flex justify-center flex-col">
+          <div className="flex justify-center mr-12">
+            <div className="mb-6">
+              <ClanNameSearch
+                defaultValue={searchParams.get("clan-name")?.toString()}
+              />
+            </div>
+          </div>
+          {data.map((clan, index) => {
+            return (
+              <div className="w-full flex justify-center" key={index}>
+                <ClanItem
+                  key={index}
+                  clanName={clan.clanName}
+                  clanTag={clan.clanTag}
+                  clanBadgeURL={clan.clanBadgeURL}
+                />
+              </div>
+            );
+          })}
+        </div>
+      </>
+    );
+  }
 }

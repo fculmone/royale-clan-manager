@@ -7,6 +7,7 @@ import { HowToInputClan } from "./ui/howToInputClan";
 import { useSearchParams } from "next/navigation";
 import KofiButton from "kofi-button";
 import Link from "next/link";
+import { ClanNameSearch } from "./ui/clanNameSearch";
 
 function SearchClanTag() {
   const linkRef = useRef<string>("");
@@ -96,10 +97,16 @@ export default function Home() {
           </p>
         </div>
 
-        <p className="text-center font-semibold text-lg mt-16">
+        <p className="text-center font-semibold text-lg mt-16 mb-8">
           Quickly determine clan member&apos;s activity and war battle status
         </p>
-        <div className="text-center mt-16">
+        <div className="flex justify-center mr-12">
+          <div className="">
+            <ClanNameSearch defaultValue={""} />
+          </div>
+        </div>
+        <p className="text-center mt-2 mb-3 text-base font-semibold">or</p>
+        <div className="text-center mt-2">
           <Suspense>
             <SearchClanTag />
           </Suspense>
