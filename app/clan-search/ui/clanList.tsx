@@ -29,16 +29,13 @@ export default function ClanList({ getData }: { getData: any }) {
             setData([]);
           } else {
             //await new Promise((resolve) => setTimeout(resolve, 3000));
-            console.log(searchParams.get("clan-name")?.toString());
-            console.log(
-              "api/get-clan-list/" + // @ts-ignore
-                encodeURI(searchParams.get("clan-name")?.toString())
-            );
-
             const result = await fetch(
               "api/get-clan-list/" +
                 // @ts-ignore
-                encodeURI(searchParams.get("clan-name")?.toString())
+                encodeURI(searchParams.get("clan-name")?.toString()).replace(
+                  "#",
+                  "%23"
+                )
             );
 
             let initialData = await result.json();
@@ -55,7 +52,7 @@ export default function ClanList({ getData }: { getData: any }) {
         setIsLoading(false);
       } catch (err: any) {
         setIsError(true);
-        console.error(err);
+        //console.error(err);
       }
     })();
   }, []);

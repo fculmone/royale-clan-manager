@@ -2,7 +2,8 @@ export function ClanNameSearch({ defaultValue }) {
   function search(formData: any) {
     //console.log("in search function");
     let response: string = formData.get("query");
-    let url: string = "/clan-search/?clan-name=" + encodeURI(response);
+    let url: string =
+      "/clan-search/?clan-name=" + encodeURI(response).replace("#", "%23");
     window.location.href = url;
   }
 
