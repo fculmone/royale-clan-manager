@@ -8,6 +8,7 @@ import { useSearchParams } from "next/navigation";
 import KofiButton from "kofi-button";
 import Link from "next/link";
 import { ClanNameSearch } from "./ui/clanNameSearch";
+import { FaTiktok } from "react-icons/fa";
 
 function SearchClanTag() {
   const linkRef = useRef<string>("");
@@ -120,12 +121,18 @@ export default function Home() {
               <HowToInputClan />
             </div>
           </div>
-          <div className="w-full flex justify-center mt-10 mb-10">
-            <KofiButton
-              color="#29abe0"
-              title="Support Me on Ko-fi"
-              kofiID="C0C1XAW7Q"
-            />
+          <div className="w-full flex flex-col align-middle justify-center text-center mt-20 mb-10">
+            <p>Follow us on TikTok!</p>
+            <div className="flex w-full justify-center ">
+              <a
+                href="https://www.tiktok.com/@canadian.power"
+                className="rounded-full  aspect-square"
+                rel="noreferrer noopener"
+                target="_blank"
+              >
+                <FaTiktok className="w-16 h-16 mt-4 bg-blue-200 rounded-full p-2" />
+              </a>
+            </div>
           </div>
 
           <div className="w-full flex text-center justify-center mt-16 mb-2">
