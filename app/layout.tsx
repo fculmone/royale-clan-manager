@@ -4,6 +4,7 @@ import "./globals.css";
 import { poppins } from "./ui/fonts";
 import Script from "next/script";
 import GoogleAnalytics from "./GoogleAnalytics";
+import GoogleAdsense from "./GoogleAdsense";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GoogleAnalytics />
+      <GoogleAdsense pId={process.env.ADSENSE_ID} />
       <body className={inter.className}>
         {children}
         {/* KOFI FLOATING WIDGET

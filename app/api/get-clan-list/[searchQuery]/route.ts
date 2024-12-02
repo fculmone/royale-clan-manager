@@ -21,8 +21,6 @@ async function getClanList(searchQuery: string) {
     "%23"
   )}&limit=30`;
 
-  console.log(url);
-
   const clanSearchResponse = await axios.get(url, {
     headers: {
       Authorization: `Bearer ${CLASH_API_KEY}`,
