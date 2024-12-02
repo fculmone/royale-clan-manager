@@ -91,7 +91,7 @@ export default function Home() {
       <Suspense>
         <Header />
       </Suspense>
-      <div className="mx-2">
+      <div className="mx-2 flex flex-col justify-center items-center text-center">
         <div className="underline-css w-full flex items-center justify-center">
           <p className="w-full text-center text-5xl md:text-6xl font-bold mt-20 md:mt-28 leading-tight">
             Royale Clan Manager
@@ -101,13 +101,9 @@ export default function Home() {
         <p className="text-center font-semibold text-lg mt-16 mb-8">
           Quickly determine clan member&apos;s activity and war battle status
         </p>
-        <div className="flex justify-center mr-12">
-          <div className="">
             <ClanNameSearch defaultValue={""} />
-          </div>
-        </div>
         <p className="text-center mt-2 mb-3 text-base font-semibold">or</p>
-        <div className="text-center mt-2">
+        <div className="text-center ">
           <Suspense>
             <SearchClanTag />
           </Suspense>

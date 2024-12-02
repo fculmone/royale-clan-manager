@@ -115,13 +115,10 @@ export default function ClanList({ getData }: { getData: any }) {
   ) {
     return (
       <div className="w-screen flex justify-center flex-col">
-        <div className="flex justify-center mr-12">
-          <div className="mb-6">
             <ClanNameSearch
               defaultValue={searchParams.get("clan-name")?.toString()}
             />
-          </div>
-        </div>
+            <div className="mb-6"></div>
         <p className="text-center text-lg">No clans found</p>
         <div className="flex justify-center">
           <div>

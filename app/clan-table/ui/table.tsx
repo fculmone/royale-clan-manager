@@ -223,11 +223,8 @@ export default function BasicTable({ getData }: { getData: any }) {
     return (
       <div className="flex flex-col">
         <div className="flex flex-col w-screen text-center justify-center items-center">
-          <div className="flex justify-center mr-12 mb-3">
-            <div className="">
               <ClanNameSearch defaultValue={""} />
-            </div>
-          </div>
+              <div className="mb-2"></div>
           <ClanTagSearch
             handleSearch={handleSearch}
             isLoading={isLoading}
@@ -248,11 +245,8 @@ export default function BasicTable({ getData }: { getData: any }) {
     return (
       <div className="flex flex-col">
         <div className="flex flex-col w-screen text-center justify-center items-center">
-          <div className="flex justify-center mr-12 mb-3">
-            <div className="">
-              <ClanNameSearch defaultValue={""} />
-            </div>
-          </div>
+         <ClanNameSearch defaultValue={""} />
+              <div className="mb-2"></div>
           <ClanTagSearch
             handleSearch={handleSearch}
             isLoading={isLoading}
@@ -279,20 +273,15 @@ export default function BasicTable({ getData }: { getData: any }) {
   } else if (isLoading) {
     return (
       <div>
-        <div className="flex justify-center items-center text-center mb-10">
-          <div>
-            <div className="flex justify-center mr-12 mb-3">
-              <div className="">
+        <div className="flex flex-col justify-center items-center text-center mb-10">
                 <ClanNameSearch defaultValue={""} />
-              </div>
-            </div>
+                <div className="mb-2"></div>
             <ClanTagSearch
               handleSearch={handleSearch}
               isLoading={isLoading}
               setIsLoading={setIsLoading}
               prevValue={prevTag}
             />
-          </div>
         </div>
         <TableSkeleton />
       </div>
@@ -343,20 +332,15 @@ export default function BasicTable({ getData }: { getData: any }) {
           </div>
         </div>
         {/* End of War Battle Graph*/}
-        <div className="flex justify-center items-center text-center mb-10">
-          <div>
-            <div className="flex justify-center mr-12 mb-3">
-              <div className="">
+        <div className="flex flex-col justify-center items-center text-center mb-10">
                 <ClanNameSearch defaultValue={""} />
-              </div>
-            </div>
+                <div className="mb-2"></div>
             <ClanTagSearch
               handleSearch={handleSearch}
               isLoading={isLoading}
               setIsLoading={setIsLoading}
               prevValue={prevTag}
             />
-          </div>
         </div>
         <p className="mt-10 mb-12 font-bold text-2xl text-center">
           {clanName}&apos;s Clan Table

@@ -20,8 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <GoogleAdsense pId="7923478383972529" />
+      </head>
       <GoogleAnalytics />
-      <GoogleAdsense pId={process.env.ADSENSE_ID} />
       <body className={inter.className}>
         {children}
         {/* KOFI FLOATING WIDGET

@@ -9,6 +9,7 @@ import { HowToInputClan } from "@/app/ui/howToInputClan";
 import KofiButton from "kofi-button";
 import { ClanNameSearch } from "@/app/ui/clanNameSearch";
 import { FaTiktok } from "react-icons/fa";
+import AdBanner from "@/app/ui/AdBanner";
 
 export default function WarStats({ getData }: { getData: any }) {
   const searchParams = useSearchParams();
@@ -180,11 +181,8 @@ export default function WarStats({ getData }: { getData: any }) {
     return (
       <div className="flex flex-col">
         <div className="flex flex-col w-screen text-center justify-center items-center">
-          <div className="flex justify-center mr-12 mb-3">
-            <div className="">
               <ClanNameSearch defaultValue={""} />
-            </div>
-          </div>
+              <div className="mb-2"></div>
           <ClanTagSearch
             handleSearch={handleSearch}
             isLoading={isLoading}
@@ -210,11 +208,8 @@ export default function WarStats({ getData }: { getData: any }) {
     return (
       <div className="flex flex-col">
         <div className="flex flex-col w-screen text-center justify-center items-center">
-          <div className="flex justify-center mr-12 mb-3">
-            <div className="">
-              <ClanNameSearch defaultValue={""} />
-            </div>
-          </div>
+          <ClanNameSearch defaultValue={""} />
+              <div className="mb-2"></div>
           <ClanTagSearch
             handleSearch={handleSearch}
             isLoading={isLoading}
@@ -241,11 +236,8 @@ export default function WarStats({ getData }: { getData: any }) {
     return (
       <div>
         <div className="text-center">
-          <div className="flex justify-center mr-12 mb-3">
-            <div className="">
-              <ClanNameSearch defaultValue={""} />
-            </div>
-          </div>
+          <ClanNameSearch defaultValue={""} />
+              <div className="mb-2"></div>
           <ClanTagSearch
             handleSearch={handleSearch}
             isLoading={isLoading}
@@ -263,11 +255,8 @@ export default function WarStats({ getData }: { getData: any }) {
         <div className="grid items-center justify-center">
           <div className="flex w-full text-center h-full ">
             <div className="flex justify-center flex-col w-full">
-              <div className="flex justify-center mr-12 mb-3">
-                <div className="">
-                  <ClanNameSearch defaultValue={""} />
-                </div>
-              </div>
+              <ClanNameSearch defaultValue={""} />
+              <div className="mb-2"></div>
               <ClanTagSearch
                 handleSearch={handleSearch}
                 isLoading={isLoading}
@@ -289,6 +278,7 @@ export default function WarStats({ getData }: { getData: any }) {
               <Probabilities />
             </div>
             <div className=" mt-16 w-full flex flex-col mx-2 justify-center items-center">
+              <AdBanner dataAdFormat="auto" dataFullWidthResponsive={true} dataAdSlot="9684351738" />
               <p className="mb-5 font-semibold text-xl text-center">
                 How to Use The War Stats Chart
               </p>
