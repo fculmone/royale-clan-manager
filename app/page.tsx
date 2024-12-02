@@ -103,7 +103,7 @@ export default function Home() {
         </p>
             <ClanNameSearch defaultValue={""} />
         <p className="text-center mt-2 mb-3 text-base font-semibold">or</p>
-        <div className="text-center ">
+        <div className="text-center w-full">
           <Suspense>
             <SearchClanTag />
           </Suspense>
