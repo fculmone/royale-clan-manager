@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Royale Clan Manager",
-  description: "The best way to manage your clash royale clan",
+  description: "Track war participation and see your chances of winning clan wars in Clash Royale",
 };
 
 export default function RootLayout({
