@@ -482,7 +482,7 @@ export default function BasicTable({ getData }: { getData: any }) {
                 rel="noreferrer noopener"
                 target="_blank"
               >
-                <FaTiktok className="w-16 h-16 mt-4 bg-blue-200 rounded-full p-2" />
+                <FaTiktok className="w-20 h-20 mt-4 bg-blue-200 rounded-full p-4 overflow-visible" />
               </a>
             </div>
           </div>

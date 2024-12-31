@@ -93,14 +93,14 @@ export default function Home() {
       </Suspense>
       <div className="mx-2 flex flex-col justify-center items-center text-center">
         <div className="underline-css w-full flex items-center justify-center">
-          <p className="w-full text-center text-5xl md:text-6xl font-bold mt-20 md:mt-28 leading-tight">
+          <h1 className="w-full text-center text-5xl md:text-6xl font-bold mt-20 md:mt-28 leading-tight">
             Royale Clan Manager
-          </p>
+          </h1>
         </div>
 
-        <p className="text-center font-semibold text-lg mt-16 mb-8">
-          Quickly determine clan member&apos;s activity and war battle status
-        </p>
+        <h2 className="text-center font-semibold text-lg mt-10 mb-8">
+          Track clan member&apos;s participations and see the chance of winning the war week!
+        </h2>
             <ClanNameSearch defaultValue={""} />
         <p className="text-center mt-2 mb-3 text-base font-semibold">or</p>
         <div className="text-center w-full">
@@ -117,6 +117,26 @@ export default function Home() {
               <HowToInputClan />
             </div>
           </div>
+          <div className="mt-10 md:mt-16 max-w-4xl">
+            <div className="mb-16">
+              <p className="font-semibold text-xl">Welcome to Royale Clan Manger!</p>
+              <p className="mt-4">
+                Created to help clan leaders see who is participating in wars and help predict where a clan
+                should be placing in war battles.
+              </p>
+            </div>
+            <div>
+              <p className="font-semibold text-xl">Analyze Clan Performance and Predict War Outcomes</p>
+              <p className="mt-4">
+                With the <b>Clan Table</b>, you can effortlessly track each member&apos;s individual war participation by simply clicking on their name. Gain valuable insights 
+                into your clan's overall performance and strategize effectively for upcoming battles.
+              </p>
+              <p className="mt-4">       
+                Using <b>War Stats</b>, see your clan&apos;s probability of victory in the next battle week. These metrics combine the total player contributions and historical 
+                statistics to help you determine where you should be placing in your clan wars.
+              </p>
+            </div>
+          </div>
           <div className="w-full flex flex-col align-middle justify-center text-center mt-20 mb-10">
             <p>Follow us on TikTok!</p>
             <div className="flex w-full justify-center ">
@@ -126,7 +146,7 @@ export default function Home() {
                 rel="noreferrer noopener"
                 target="_blank"
               >
-                <FaTiktok className="w-16 h-16 mt-4 bg-blue-200 rounded-full p-2" />
+                <FaTiktok className="w-20 h-20 mt-4 bg-blue-200 rounded-full p-4 overflow-visible" />
               </a>
             </div>
           </div>
