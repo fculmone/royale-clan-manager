@@ -117,7 +117,7 @@ export default function Home() {
               <HowToInputClan />
             </div>
           </div>
-          <div className="mt-10 md:mt-16 max-w-4xl">
+          <div className="mt-20 max-w-4xl">
             <div className="mb-16">
               <p className="font-semibold text-xl">Welcome to Royale Clan Manger!</p>
               <p className="mt-4">
