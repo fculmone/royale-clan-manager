@@ -129,7 +129,7 @@ export default function Home() {
               <p className="font-semibold text-xl">Analyze Clan Performance and Predict War Outcomes</p>
               <p className="mt-4">
                 With the <b>Clan Table</b>, you can effortlessly track each member&apos;s individual war participation by simply clicking on their name. Gain valuable insights 
-                into your clan's overall performance and strategize effectively for upcoming battles.
+                into your clan&apos;s overall performance and strategize effectively for upcoming battles.
               </p>
               <p className="mt-4">       
                 Using <b>War Stats</b>, see your clan&apos;s probability of victory in the next battle week. These metrics combine the total player contributions and historical 
